@@ -1,0 +1,175 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<section class="contact-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
+                We’d love to hear from you. Reach out using the contact details below or send us a message.
+            </p>
+        </div>
+
+        <div class="row gy-5">
+            <!-- Contact Info -->
+            <div class="col-md-6" data-aos="fade-right">
+                <h5 class="fw-bold text-primary">Contact Information</h5>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-3">
+                        <strong>Phone:</strong><br />
+                        078 099 4644 / 067 488 5508
+                    </li>
+                    <li class="mb-3">
+                        <strong>Email:</strong><br />
+                        <a href="mailto:siphomajova1@gmail.com" class="text-decoration-none text-dark">siphomajova1@gmail.com</a>
+                    </li>
+                    <li class="mb-3">
+                        <strong>Business Address :</strong><br />
+                        Stand no 410,Badibanise,Mount Frere,5090
+                    </li>
+                    <li>
+                        <strong>Postal Address:</strong><br />
+                        4751 Monokotswayi street, Windmill Park, Boksburg , 1459
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Form -->
+            <!-- Contact Form (Request a Call) -->
+            <div class="col-md-6" data-aos="fade-left">
+                <h5 class="fw-bold text-primary">Request a Call</h5>
+                <p class="text-muted">Leave your details and we’ll get back to you shortly.</p>
+
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input id="name" name="name" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input id="email" name="email" type="email" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input id="phone" name="phone" class="form-control" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="preferredTime" class="form-label">Preferred Call Time</label>
+                        <input id="preferredTime" name="preferredTime" class="form-control" placeholder="e.g. Weekday afternoon, after 5pm" />
+                    </div>
+
+                    <button id="sendEmailBtn" type="submit" class="btn btn-primary">Request Call</button>
+
+                    <div id="contactNotice" aria-live="polite" style="margin-top:.75rem; display:none;"></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+</script>
+<script>
+    (function () {
+        const COMPANY_EMAIL = "info@companydomain.com";
+        const form = document.getElementById("contactForm");
+        const notice = document.getElementById("contactNotice");
+
+        function setNotice(text, isError = false) {
+            notice.style.display = "block";
+            notice.textContent = text;
+            notice.style.color = isError ? "#b00020" : "";
+            setTimeout(() => {
+                notice.style.opacity = 1;
+                setTimeout(() => { notice.style.display = "none"; notice.style.opacity = 1; }, 6000);
+            }, 0);
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            return new Promise((resolve, reject) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.top = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    const successful = document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    successful ? resolve() : reject(new Error('execCommand returned false'));
+                } catch (err) {
+                    document.body.removeChild(textArea);
+                    reject(err);
+                }
+            });
+        }
+
+        async function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(text);
+            } else {
+                return fallbackCopyTextToClipboard(text);
+            }
+        }
+
+        function buildEmailBody(fields) {
+            return [
+                `Call request from website:`,
+                ``,
+                `Name: ${fields.name || '-'}`,
+                `Email: ${fields.email || '-'}`,
+                `Phone: ${fields.phone || '-'}`,
+                `Preferred Call Time: ${fields.preferredTime || 'Not specified'}`,
+                ``,
+                '——',
+                'This message was prepared automatically. Please press SEND to deliver it to the company.'
+            ].join('\n');
+        }
+
+        function openMailClient(to, subject, body) {
+            const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailto;
+        }
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const fields = {
+                name: document.getElementById("name")?.value.trim(),
+                email: document.getElementById("email")?.value.trim(),
+                phone: document.getElementById("phone")?.value.trim(),
+                preferredTime: document.getElementById("preferredTime")?.value.trim()
+            };
+
+            if (!fields.name || !fields.email || !fields.phone) {
+                setNotice("Please fill in your name, email, and phone number.", true);
+                return;
+            }
+
+            const subject = `Call Request from ${fields.name}`;
+            const body = buildEmailBody(fields);
+
+            try {
+                await copyToClipboard(body);
+                setNotice("Request copied to clipboard. Opening your email app...");
+                openMailClient(COMPANY_EMAIL, subject, body);
+            } catch (err) {
+                console.error(err);
+                setNotice("Could not copy automatically — opening email app. Please paste your request if needed.", true);
+                openMailClient(COMPANY_EMAIL, subject, body);
+            }
+        });
+    })();
+</script>
+

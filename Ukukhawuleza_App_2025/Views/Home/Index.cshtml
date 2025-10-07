@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<section class="hero-section d-flex align-items-center text-center" data-aos="fade-up">
+    <div class="container">
+        <h1 class="hero-title">Ukukhawuleza Trading Enterprise</h1>
+        <p class="hero-subtitle">Delivering quality projects with an unbeaten track record.</p>
+        <a href="@Url.Action("About", "Home")" class="btn btn-primary btn-lg">Learn More About Us</a>
+    </div>
+</section>
+
+<section class="about-section py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="about-title">Who We Are</h2>
+                <p class="lead about-text">
+                    Ukukhawuleza Trading Enterprise is a general trading entity that focuses on various sectors of business.
+                    The strong growth of Ukukhawuleza Trading Enterprise has been built on a foundation of consistently delivering quality projects.
+                    Ukukhawuleza Trading Enterprise has demonstrated an unbeaten track record for delivering high quality construction projects to our world-class clients.
+                </p>
+                <a href="@Url.Action("About", "Home")" class="btn btn-primary mt-3">Read More About Us</a>
+               
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <img src="/Con1.jpg" alt="Construction" class="img-fluid rounded shadow" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            '/Con1.jpg',
+            '/Con3.jpg',
+            '/Con3.jpg'
+            
+        ];
+
+        const imgElement = document.querySelector('.image-wrapper img');
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgElement.src = images[currentIndex];
+        }
+
+        setInterval(changeImage, 5000);
+    </script>
+</section>
+
+
+<section class="services-section py-5 bg-light">
+    <div class="container">
+        <h3 class="section-title mb-4 text-center" data-aos="fade-up">Our Services</h3>
+
+        <div class="row g-4">
+   
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card p-4 d-flex align-items-start">
+                    <div class="icon">🛠️</div>
+                    <div>
+                        <h5 class="service-title">Installation Services</h5>
+                        <p class="service-desc">Professional installation to ensure smooth project execution.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card p-4 d-flex align-items-start">
+                    <div class="icon">🚚</div>
+                    <div>
+                        <h5 class="service-title">Delivery Solutions</h5>
+                        <p class="service-desc">Safe and timely delivery tailored to client needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card p-4 d-flex align-items-start">
+                    <div class="icon">🏗️</div>
+                    <div>
+                        <h5 class="service-title">General Construction</h5>
+                        <p class="service-desc">End-to-end construction services with attention to detail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="@Url.Action("Services", "Home")" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="500">More Services</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-banner py-5 text-center" style="background-color: #ffffff; color: #1a2637; position: relative;">
+    <div class="container" data-aos="zoom-in">
+        <h4 id="cta-headline" class="mb-2 fw-semibold" style="min-height: 2.5rem; transition: opacity 0.5s ease;">Looking for a trusted trading partner? We’ve got you covered!</h4>
+        <p id="cta-subtext" class="mb-4 fs-5" style="min-height: 3rem; transition: opacity 0.5s ease;">Partner with Ukukhawuleza Trading Enterprise and take your project to the next level.</p>
+       @*  <a id="cta-button" href="@Url.Action('Contact', 'Home')" class="btn btn-primary btn-lg shadow" style="transition: opacity 0.5s ease;">Request a Quote</a> *@
+        <a href="@Url.Action("Contact", "Home")" class="btn btn-primary btn-lg shadow">Talk to Us</a>
+    </div>
+    <blockquote class="highlight-box">
+        “Delivering excellence with every project, driven by passion and precision.”
+    </blockquote>
+</section>
+
+<script>
+    const ctaData = [
+      {
+        headline: "Need a reliable partner? Let’s build success together!",
+        subtext: "Experience excellence and quality with Ukukhawuleza Trading Enterprise.",
+        button: "Get Started",
+      },
+      {
+        headline: "Your trusted trading partner awaits — Join us today!",
+        subtext: "Contact us to explore tailored solutions for your project.",
+        button: "Request a Call",
+      },
+      {
+        headline: "Ready to grow your business? Partner with us now!",
+        subtext: "We deliver quality, reliability, and partnership you can count on.",
+        button: "Talk to Us",
+      }
+    ];
+
+    let index = 0;
+    const headlineEl = document.getElementById("cta-headline");
+    const subtextEl = document.getElementById("cta-subtext");
+    const buttonEl = document.getElementById("cta-button");
+
+    function fadeOutIn(element, newText) {
+      element.style.opacity = 0;
+      setTimeout(() => {
+        element.textContent = newText;
+        element.style.opacity = 1;
+      }, 500);
+    }
+
+    function rotateCTA() {
+      index = (index + 1) % ctaData.length;
+      fadeOutIn(headlineEl, ctaData[index].headline);
+      fadeOutIn(subtextEl, ctaData[index].subtext);
+      fadeOutIn(buttonEl, ctaData[index].button);
+    }
+
+    setInterval(rotateCTA, 6000); // rotate every 6 seconds
+</script>
+
+
+
+
+<!-- Fonts and AOS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+      duration: 900,
+      once: true,
+    });
+</script>

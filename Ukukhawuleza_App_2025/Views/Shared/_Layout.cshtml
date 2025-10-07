@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ukukhawuleza_App_2025</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Ukukhawuleza_App_2025.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-3" href="/">
+                    <img src="/Logo.png" alt="Ukukhawuleza Logo" class="logo-img" />
+                    <span class="brand-name"></span>
+                </a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navMenu"
+                        aria-controls="navMenu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Clientele">Clientele</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+=
+    <footer style="background-color: #1a2637; color: #e1e5ea;" class="mt-5">
+        <div class="container py-2">
+            <div class="row">
+                <!-- Addresses -->
+                <div class="col-md-6 mb-2">
+                    <h5 style="color: #f3f6f9; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.6rem;">Addresses</h5>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <!-- Postal Address -->
+                        <div style="flex: 1; min-width: 180px;">
+                            <p style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0.3rem;">
+                                <strong>Postal Address:</strong><br />
+                                4751 Monokotswayi Street,<br />
+                                Windmill Park, Boksburg,<br />
+                                1459
+                            </p>
+                        </div>
+
+                        <!-- Business Address -->
+                        <div style="flex: 1; min-width: 180px;">
+                            <p style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0;">
+                                <strong>Business Address:</strong><br />
+                                Stand no 410,<br />
+                                Badibanise,<br />
+                                Mount Frere,<br />
+                                5090
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Contact Info -->
+                <div class="col-md-3 mb-2">
+                    <h6 style="color: #f3f6f9; font-weight: 600; font-size: 0.8rem; margin-bottom: 0.4rem;">Contact</h6>
+                    <p style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0;">
+                        <a href="mailto:siphomajova1@gmail.com" style="color: #a0aec0; text-decoration: none; font-size: 0.75rem;">
+                            siphomajova1@gmail.com
+                        </a><br />
+                        <span>078 099 4644 / 067 488 5508</span>
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-3 mb-2">
+                    <h6 style="color: #f3f6f9; font-weight: 600; font-size: 0.8rem; margin-bottom: 0.4rem;">Quick Links</h6>
+                    <ul class="list-unstyled" style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0;">
+                        <li>
+                            <a href="/" style="color: #a0aec0; text-decoration: none;"
+                               onmouseover="this.style.color='#63b3ed'"
+                               onmouseout="this.style.color='#a0aec0'">About</a>
+                        </li>
+                        <li>
+                            <a href="/" style="color: #a0aec0; text-decoration: none;"
+                               onmouseover="this.style.color='#63b3ed'"
+                               onmouseout="this.style.color='#a0aec0'">Services</a>
+                        </li>
+                        <li>
+                            <a href="/" style="color: #a0aec0; text-decoration: none;"
+                               onmouseover="this.style.color='#63b3ed'"
+                               onmouseout="this.style.color='#a0aec0'">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="row mt-2">
+                <div class="col-12">
+                    <h5 style="color: #f3f6f9; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem;">Our Business Location</h5>
+                    <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                        <iframe src="https://www.google.com/maps?q=Stand+no+410,+Badibanise,+Mount+Frere,+5090&output=embed"
+                                width="100%"
+                                height="180"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-2" style="color: #718096; font-size: 0.7rem; margin-bottom: 0;">
+                © @DateTime.Now.Year Ukukhawuleza Trading Enterprise
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
