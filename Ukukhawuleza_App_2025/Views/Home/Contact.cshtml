@@ -2,75 +2,212 @@
     ViewData["Title"] = "Contact Us";
 }
 
-<section class="contact-section py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-            <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
-                We’d love to hear from you. Reach out using the contact details below or send us a message.
-            </p>
-        </div>
+<!-- Contact Hero -->
 
-        <div class="row gy-5">
-            <!-- Contact Info -->
-            <div class="col-md-6" data-aos="fade-right">
-                <h5 class="fw-bold text-primary">Contact Information</h5>
-                <ul class="list-unstyled mt-3">
-                    <li class="mb-3">
-                        <strong>Phone:</strong><br />
-                        078 099 4644 / 067 488 5508
-                    </li>
-                    <li class="mb-3">
-                        <strong>Email:</strong><br />
-                        <a href="mailto:siphomajova1@gmail.com" class="text-decoration-none text-dark">siphomajova1@gmail.com</a>
-                    </li>
-                    <li class="mb-3">
-                        <strong>Business Address :</strong><br />
-                        Stand no 410,Badibanise,Mount Frere,5090
-                    </li>
-                    <li>
-                        <strong>Postal Address:</strong><br />
-                        4751 Monokotswayi street, Windmill Park, Boksburg , 1459
-                    </li>
-                </ul>
+
+<!-- Contact Main Section -->
+<section class="uk-contact-main">
+    <div class="container">
+        <div class="uk-contact-grid">
+            <!-- Contact Information -->
+            <div class="uk-contact-info" data-aos="fade-right">
+                <h2>Get In Touch</h2>
+                <p class="contact-subtitle">We'd love to hear from you. Reach out using any of the methods below.</p>
+
+                <!-- Contact Methods -->
+                <div class="uk-contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">📞</div>
+                        <div class="method-content">
+                            <h4>Call Us Directly</h4>
+                            <p>078 099 4644</p>
+                            <p>067 488 5508</p>
+                            <a href="tel:0780994644" class="method-action">Call Now</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">✉️</div>
+                        <div class="method-content">
+                            <h4>Send Us an Email</h4>
+                            <p>info@ukukhawuleza.co.za</p>
+                            <a href="mailto:info@ukukhawuleza.co.za" class="method-action">Send Email</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">📍</div>
+                        <div class="method-content">
+                            <h4>Visit Our Offices</h4>
+                            <div class="addresses">
+                                <div class="address">
+                                    <strong>Business Address</strong>
+                                    <p>Stand no 410, Badibanise<br>Mount Frere, 5090</p>
+                                </div>
+                                <div class="address">
+                                    <strong>Postal Address</strong>
+                                    <p>4751 Monokotswayi Street<br>Windmill Park, Boksburg, 1459</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="uk-quick-actions">
+                    <h4>Quick Connect</h4>
+                    <div class="action-buttons">
+                        <a href="tel:0780994644" class="action-btn call-btn">
+                            <span class="action-icon">📞</span>
+                            <span>Call Now</span>
+                        </a>
+                        <a href="mailto:info@ukukhawuleza.co.za" class="action-btn email-btn">
+                            <span class="action-icon">✉️</span>
+                            <span>Send Email</span>
+                        </a>
+                        <a href="https://wa.me/270780994644" class="action-btn whatsapp-btn">
+                            <span class="action-icon">💬</span>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Contact Form -->
-            <!-- Contact Form (Request a Call) -->
-            <div class="col-md-6" data-aos="fade-left">
-                <h5 class="fw-bold text-primary">Request a Call</h5>
-                <p class="text-muted">Leave your details and we’ll get back to you shortly.</p>
+            <div class="uk-contact-form" data-aos="fade-left">
+                <div class="form-header">
+                    <h2>Request a Call Back</h2>
+                    <p>Leave your details and we'll get back to you within 1 hour</p>
+                </div>
 
-                <form id="contactForm">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input id="name" name="name" class="form-control" required />
+                <form id="ukContactForm" class="uk-contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input id="email" name="email" type="email" class="form-control" required />
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="078 099 4644">
+                        </div>
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Call Time</label>
+                            <select id="preferredTime" name="preferredTime">
+                                <option value="">Select preferred time</option>
+                                <option value="Morning (8AM-12PM)">Morning (8AM-12PM)</option>
+                                <option value="Afternoon (12PM-5PM)">Afternoon (12PM-5PM)</option>
+                                <option value="Evening (5PM-8PM)">Evening (5PM-8PM)</option>
+                                <option value="Anytime">Anytime Today</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input id="phone" name="phone" class="form-control" required />
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level</label>
+                        <div class="urgency-options">
+                            <label class="urgency-option">
+                                <input type="radio" name="urgency" value="Low">
+                                <span class="urgency-label">
+                                    <span class="urgency-dot low"></span>
+                                    Low Priority
+                                </span>
+                            </label>
+                            <label class="urgency-option">
+                                <input type="radio" name="urgency" value="Medium" checked>
+                                <span class="urgency-label">
+                                    <span class="urgency-dot medium"></span>
+                                    Medium Priority
+                                </span>
+                            </label>
+                            <label class="urgency-option">
+                                <input type="radio" name="urgency" value="High">
+                                <span class="urgency-label">
+                                    <span class="urgency-dot high"></span>
+                                    High Priority
+                                </span>
+                            </label>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="preferredTime" class="form-label">Preferred Call Time</label>
-                        <input id="preferredTime" name="preferredTime" class="form-control" placeholder="e.g. Weekday afternoon, after 5pm" />
+                    <div class="form-group">
+                        <label for="message">Project Details (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Briefly describe your project or requirements..."></textarea>
                     </div>
 
-                    <button id="sendEmailBtn" type="submit" class="btn btn-primary">Request Call</button>
+                    <button type="submit" class="uk-submit-btn">
+                        <span class="btn-text">Request Call Back</span>
+                        <span class="btn-icon">📞</span>
+                    </button>
 
-                    <div id="contactNotice" aria-live="polite" style="margin-top:.75rem; display:none;"></div>
+                    <div id="ukContactNotice" class="form-notice" aria-live="polite"></div>
                 </form>
             </div>
-
         </div>
     </div>
 </section>
+
+<!-- Map Section -->
+<section class="uk-contact-map">
+    <div class="container">
+        <div class="map-header" data-aos="fade-up">
+            <h2>Find Our Offices</h2>
+            <p>Visit us at our locations across South Africa</p>
+        </div>
+        <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="map-placeholder">
+                <div class="map-fallback">
+                    <div class="fallback-icon">🗺️</div>
+                    <h4>Our Locations</h4>
+                    <p>Stand no 410, Badibanise, Mount Frere, 5090</p>
+                    <p>4751 Monokotswayi Street, Windmill Park, Boksburg, 1459</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-map-direction">
+                        <span>View on Google Maps</span>
+                        <span>🧭</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Business Hours -->
+<section class="uk-business-hours">
+    <div class="container">
+        <div class="hours-content" data-aos="fade-up">
+            <h2>Business Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <div class="day">Monday - Friday</div>
+                    <div class="time">8:00 AM - 5:00 PM</div>
+                </div>
+                <div class="hours-item">
+                    <div class="day">Saturday</div>
+                    <div class="time">9:00 AM - 1:00 PM</div>
+                </div>
+                <div class="hours-item">
+                    <div class="day">Sunday</div>
+                    <div class="time">Closed</div>
+                </div>
+                <div class="hours-item emergency">
+                    <div class="day">Emergency Projects</div>
+                    <div class="time">24/7 On Call</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -81,9 +218,9 @@
 </script>
 <script>
     (function () {
-        const COMPANY_EMAIL = "info@companydomain.com";
-        const form = document.getElementById("contactForm");
-        const notice = document.getElementById("contactNotice");
+        const COMPANY_EMAIL = "info@ukukhawuleza.co.za";
+        const form = document.getElementById("ukContactForm");
+        const notice = document.getElementById("ukContactNotice");
 
         function setNotice(text, isError = false) {
             notice.style.display = "block";
@@ -131,6 +268,8 @@
                 `Email: ${fields.email || '-'}`,
                 `Phone: ${fields.phone || '-'}`,
                 `Preferred Call Time: ${fields.preferredTime || 'Not specified'}`,
+                `Urgency Level: ${fields.urgency || 'Medium'}`,
+                `Project Details: ${fields.message || 'Not provided'}`,
                 ``,
                 '——',
                 'This message was prepared automatically. Please press SEND to deliver it to the company.'
@@ -149,7 +288,9 @@
                 name: document.getElementById("name")?.value.trim(),
                 email: document.getElementById("email")?.value.trim(),
                 phone: document.getElementById("phone")?.value.trim(),
-                preferredTime: document.getElementById("preferredTime")?.value.trim()
+                preferredTime: document.getElementById("preferredTime")?.value,
+                urgency: document.querySelector('input[name="urgency"]:checked')?.value || 'Medium',
+                message: document.getElementById("message")?.value.trim()
             };
 
             if (!fields.name || !fields.email || !fields.phone) {

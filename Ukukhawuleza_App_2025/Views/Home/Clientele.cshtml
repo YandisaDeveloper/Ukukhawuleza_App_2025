@@ -1,49 +1,279 @@
 ﻿@{
-    ViewData["Title"] = "Our Clientele";
+    ViewData["Title"] = "Our Esteemed Clientele";
 }
 
-<section class="clientele-section py-5">
+
+
+<!-- Animated Logo Showcase -->
+<section class="uk-logo-showcase">
     <div class="container">
-        <h2 class="section-title text-center mb-5">Our Esteemed Clients</h2>
-        <div class="logo-grid">
-            <div class="logo-item" title="Client 1" data-aos="fade-up">
-                <img src="/CC logo.png" alt="Client 1 Logo" />
+        <div class="uk-showcase-header" data-aos="fade-up">
+            <h2>Our Esteemed Partners</h2>
+            <p>Building lasting relationships with South Africa's premier organizations</p>
+        </div>
+
+        <!-- Logo Carousel -->
+        <div class="uk-logo-carousel" data-aos="fade-up">
+            <div class="carousel-track">
+                <!-- First Set -->
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="Cape Construction">
+                        <div class="logo-image">
+                            <img src="/CC logo.png" alt="Cape Construction" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">Cape Construction</span>
+                            <span class="client-sector">Construction & Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="CEMI">
+                        <div class="logo-image">
+                            <img src="/CEMI LOGO.png" alt="CEMI" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">CEMI</span>
+                            <span class="client-sector">Engineering Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="PRASA">
+                        <div class="logo-image">
+                            <img src="/prasa-logo.png" alt="PRASA" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">PRASA</span>
+                            <span class="client-sector">Rail Transport</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="Rand Water">
+                        <div class="logo-image">
+                            <img src="/Randwaterlogo.png" alt="Rand Water" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">Rand Water</span>
+                            <span class="client-sector">Water Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="Transnet">
+                        <div class="logo-image">
+                            <img src="/Transnet Logo.png" alt="Transnet" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">Transnet</span>
+                            <span class="client-sector">Logistics & Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="KIG Construction">
+                        <div class="logo-image">
+                            <img src="/kig logo.png" alt="KIG Construction" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">KIG Construction</span>
+                            <span class="client-sector">Construction Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="Umzimvubu Municipality">
+                        <div class="logo-image">
+                            <img src="/Umzimvubu-Logo.png" alt="Umzimvubu Municipality" />
+                        </div>
+                        <div class="logo-overlay">
+                            <span class="client-name">Umzimvubu Municipality</span>
+                            <span class="client-sector">Local Government</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-slide">
+                    <div class="logo-card" data-client="Maziya General Services">
+                        <div class="logo-badge">
+                            <div class="badge-icon">🏆</div>
+                            <div class="badge-content">
+                                <span class="client-name">Maziya General Services</span>
+                                <span class="client-sector">General Trading</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="logo-item" title="Client 2" data-aos="fade-up" data-aos-delay="100">
-                <img src="/CEMI LOGO.png" alt="Client 2 Logo" />
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="carousel-controls" data-aos="fade-up">
+            <button class="carousel-btn prev">
+                <span><</span>
+            </button>
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-            <div class="logo-item" title="Client 3" data-aos="fade-up" data-aos-delay="200">
-                <img src="/prasa-logo.png" alt="Client 3 Logo" />
-            </div>
-            <div class="logo-item" title="Client 4" data-aos="fade-up" data-aos-delay="300">
-                <img src="/Randwaterlogo.png" alt="Client 4 Logo" />
-            </div>
-            <div class="logo-item" title="Client 5" data-aos="fade-up" data-aos-delay="400">
-                <img src="/Transnet Logo.png" alt="Client 5 Logo" />
-            </div>
-            <div class="logo-item" title="Client 6" data-aos="fade-up" data-aos-delay="500">
-                <img src="/kig logo.png" alt="Client 6 Logo" />
-            </div>
-            <div class="logo-item" title="Client 6" data-aos="fade-up" data-aos-delay="500">
-                <img src="/Umzimvubu-Logo.png" alt="Client 6 Logo" />
-            </div>
-            <!-- Add more logos as needed -->
-            <div class="logo-item no-logo d-flex align-items-center justify-content-center" title="Client 5" data-aos="fade-up" data-aos-delay="400" style="min-width: 150px; min-height: 80px; background-color: #f0f0f0; border-radius: 8px; font-weight: 600; font-size: 1.1rem; color: #333;">
-                <span>Maziya General Sercives</span>
-            </div>
+            <button class="carousel-btn next">
+                <span>></span>
+            </button>
         </div>
     </div>
 </section>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+<!-- Client Testimonials -->
+<section class="uk-client-testimonials">
+    <div class="container">
+        <div class="testimonials-header" data-aos="fade-up">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from the organizations that trust us with their projects</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-content">
+                    <div class="quote-icon">❝</div>
+                    <p>"Ukukhawuleza Trading Enterprise delivered exceptional quality on our infrastructure project. Their attention to detail and professional approach exceeded our expectations."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">🏢</div>
+                        <div class="client-details">
+                            <strong>Major Construction Firm</strong>
+                            <span>Infrastructure Sector</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-content">
+                    <div class="quote-icon">❝</div>
+                    <p>"The team's reliability and commitment to deadlines made them our preferred partner for multiple projects. Highly recommended for any construction needs."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">🚚</div>
+                        <div class="client-details">
+                            <strong>National Logistics Company</strong>
+                            <span>Transport & Logistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+        </div>
+    </div>
+</section>
+
+
+
+
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
-      duration: 900,
-      once: true,
+        duration: 1000,
+        once: true,
+    });
+
+    // Logo Carousel Functionality
+    class LogoCarousel {
+        constructor() {
+            this.track = document.querySelector('.carousel-track');
+            this.slides = document.querySelectorAll('.logo-slide');
+            this.dots = document.querySelectorAll('.dot');
+            this.prevBtn = document.querySelector('.carousel-btn.prev');
+            this.nextBtn = document.querySelector('.carousel-btn.next');
+            this.currentIndex = 0;
+            this.slideCount = this.slides.length;
+            this.slidesPerView = this.calculateSlidesPerView();
+
+            this.init();
+        }
+
+        calculateSlidesPerView() {
+            if (window.innerWidth < 768) return 2;
+            if (window.innerWidth < 1024) return 3;
+            return 4;
+        }
+
+        init() {
+            this.prevBtn.addEventListener('click', () => this.prev());
+            this.nextBtn.addEventListener('click', () => this.next());
+
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goToSlide(index));
+            });
+
+            // Auto-rotate
+            this.autoRotate = setInterval(() => this.next(), 4000);
+
+            // Pause on hover
+            this.track.addEventListener('mouseenter', () => {
+                clearInterval(this.autoRotate);
+            });
+
+            this.track.addEventListener('mouseleave', () => {
+                this.autoRotate = setInterval(() => this.next(), 4000);
+            });
+
+            // Responsive handling
+            window.addEventListener('resize', () => {
+                this.slidesPerView = this.calculateSlidesPerView();
+                this.updateCarousel();
+            });
+
+            this.updateCarousel();
+        }
+
+        next() {
+            this.currentIndex = (this.currentIndex + 1) % Math.ceil(this.slideCount / this.slidesPerView);
+            this.updateCarousel();
+        }
+
+        prev() {
+            this.currentIndex = (this.currentIndex - 1 + Math.ceil(this.slideCount / this.slidesPerView)) % Math.ceil(this.slideCount / this.slidesPerView);
+            this.updateCarousel();
+        }
+
+        goToSlide(index) {
+            this.currentIndex = index;
+            this.updateCarousel();
+        }
+
+        updateCarousel() {
+            const translateX = -this.currentIndex * (100 / this.slidesPerView);
+            this.track.style.transform = `translateX(${translateX}%)`;
+
+            // Update dots
+            this.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentIndex);
+            });
+        }
+    }
+
+    // Initialize carousel
+    document.addEventListener('DOMContentLoaded', () => {
+        new LogoCarousel();
+    });
+
+    // Add hover effects to logo cards
+    document.querySelectorAll('.logo-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.05)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
 </script>

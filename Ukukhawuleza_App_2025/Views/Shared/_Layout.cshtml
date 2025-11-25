@@ -46,90 +46,52 @@
         </main>
     </div>
 
-=
-    <footer style="background-color: #1a2637; color: #e1e5ea;" class="mt-5">
-        <div class="container py-2">
-            <div class="row">
-                <!-- Addresses -->
-                <div class="col-md-6 mb-2">
-                    <h5 style="color: #f3f6f9; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.6rem;">Addresses</h5>
-                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                        <!-- Postal Address -->
-                        <div style="flex: 1; min-width: 180px;">
-                            <p style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0.3rem;">
-                                <strong>Postal Address:</strong><br />
-                                4751 Monokotswayi Street,<br />
-                                Windmill Park, Boksburg,<br />
-                                1459
-                            </p>
-                        </div>
+    <footer class="uk-footer">
+        <div class="uk-footer-wave"></div>
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="uk-footer-main">
+                
 
-                        <!-- Business Address -->
-                        <div style="flex: 1; min-width: 180px;">
-                            <p style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0;">
-                                <strong>Business Address:</strong><br />
-                                Stand no 410,<br />
-                                Badibanise,<br />
-                                Mount Frere,<br />
-                                5090
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Contact Info -->
-                <div class="col-md-3 mb-2">
-                    <h6 style="color: #f3f6f9; font-weight: 600; font-size: 0.8rem; margin-bottom: 0.4rem;">Contact</h6>
-                    <p style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0;">
-                        <a href="mailto:siphomajova1@gmail.com" style="color: #a0aec0; text-decoration: none; font-size: 0.75rem;">
-                            siphomajova1@gmail.com
-                        </a><br />
-                        <span>078 099 4644 / 067 488 5508</span>
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-md-3 mb-2">
-                    <h6 style="color: #f3f6f9; font-weight: 600; font-size: 0.8rem; margin-bottom: 0.4rem;">Quick Links</h6>
-                    <ul class="list-unstyled" style="font-size: 0.75rem; line-height: 1.25; margin-bottom: 0;">
-                        <li>
-                            <a href="/" style="color: #a0aec0; text-decoration: none;"
-                               onmouseover="this.style.color='#63b3ed'"
-                               onmouseout="this.style.color='#a0aec0'">About</a>
-                        </li>
-                        <li>
-                            <a href="/" style="color: #a0aec0; text-decoration: none;"
-                               onmouseover="this.style.color='#63b3ed'"
-                               onmouseout="this.style.color='#a0aec0'">Services</a>
-                        </li>
-                        <li>
-                            <a href="/" style="color: #a0aec0; text-decoration: none;"
-                               onmouseover="this.style.color='#63b3ed'"
-                               onmouseout="this.style.color='#a0aec0'">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                    
+                    
 
             <!-- Map Section -->
-            <div class="row mt-2">
-                <div class="col-12">
-                    <h5 style="color: #f3f6f9; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem;">Our Business Location</h5>
-                    <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                        <iframe src="https://www.google.com/maps?q=Stand+no+410,+Badibanise,+Mount+Frere,+5090&output=embed"
-                                width="100%"
-                                height="180"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="uk-footer-map">
+                <div class="map-header">
+                    <h4>📍 Find Us Here</h4>
+                    <p>Visit our main office location</p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps?q=Stand+no+410,+Badibanise,+Mount+Frere,+5090&output=embed"
+                            width="100%"
+                            height="200"
+                            style="border:0; border-radius: 12px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-actions">
+                        <a href="https://maps.google.com/?q=Stand+no+410,+Badibanise,+Mount+Frere,+5090" target="_blank" class="btn-map">
+                            <span>Get Directions</span>
+                            <span class="btn-icon">🧭</span>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center mt-2" style="color: #718096; font-size: 0.7rem; margin-bottom: 0;">
-                © @DateTime.Now.Year Ukukhawuleza Trading Enterprise
+            <!-- Footer Bottom -->
+            <div class="uk-footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>© @DateTime.Now.Year <strong>Ukukhawuleza Trading Enterprise</strong>. All rights reserved.</p>
+                    </div>
+                    <div class="footer-badges">
+                        <div class="badge">🏆 Quality Guaranteed</div>
+                        <div class="badge">⚡ Rapid Service</div>
+                        <div class="badge">🤝 Trusted Partner</div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
